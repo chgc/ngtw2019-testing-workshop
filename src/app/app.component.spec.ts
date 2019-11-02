@@ -1,6 +1,7 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { DataService } from './data.service';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 fdescribe('AppComponent', () => {
   let mockDataService: DataService = {
@@ -10,7 +11,8 @@ fdescribe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [AppComponent],
-      providers: [{ provide: DataService, useValue: mockDataService }]
+      providers: [{ provide: DataService, useValue: mockDataService }],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     }).compileComponents();
   }));
 
