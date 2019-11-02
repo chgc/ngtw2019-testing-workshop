@@ -1,4 +1,9 @@
-import { Component } from '@angular/core';
+import {
+  Component,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef
+} from '@angular/core';
+import { DataService } from './data.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +12,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ngtw2019-testing';
+  count = 0;
+  constructor(private dataService: DataService) {}
+
+  ngOnInit() {
+    // this.dataService.add(1, 2);
+  }
+  add() {
+    this.count += 1;
+  }
 }

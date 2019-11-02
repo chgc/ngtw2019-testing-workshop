@@ -13,13 +13,13 @@ describe('DataService Testing', () => {
     expect(dataService).toBeDefined();
   });
 
-  fit('sum two number', () => {
+  it('sum two number', () => {
     spyOn(logicService, 'dosomething').and.returnValue(20);
 
     // dataService.add(1, 2);
     // expect(logicService.dosomething).toHaveBeenCalled();
 
-    expect(dataService.add(1, 2)).toBe(12);
+    expect(dataService.add(1, 2)).toBe(22);
   });
 
   it('除法', () => {
